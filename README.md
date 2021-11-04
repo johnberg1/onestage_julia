@@ -1,6 +1,18 @@
 # onestage_julia
 Julia implementation of the CVPR 2021 paper Training Generative Adversarial Networks in One Stage
 
+### Baseline Model Updates
+
+- `src` includes the layers and networks
+- `utils` includes some utility functions
+- `main.ipynb` includes the main training pipeline. Currently, I am able to initialize the networks, read the data, pass it through the network and output losses.
+
+### TODO Items
+- Batch Normalization layer gives a weird CUDA error, fix that.
+- Complete the training loop by implementing the optimizers
+- Complete the dataloader for CelebA too.
+- Implement the onestage version.
+
 ```
 @InProceedings{shen2021training,
     author    = {Shen, Chengchao and Yin, Youtan and Wang, Xinchao and Li, Xubin and Song, Jie and Song, Mingli},
