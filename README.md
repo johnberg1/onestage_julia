@@ -5,12 +5,17 @@ Julia implementation of the CVPR 2021 paper Training Generative Adversarial Netw
 
 - `src` includes the layers and networks
 - `utils` includes some utility functions
-- `main.ipynb` includes the main training pipeline. Currently, I am able to initialize the networks, read the data, pass it through the network and output losses, and update the paremeters. However, the loss functions get stuck in some value, and the output of the Generator is not meaningful. 
+- `main.ipynb` includes the main training pipeline.
+- `trained_model` include a generator and a discriminator checkpoint, trained on MNIST for 20 epochs for the two stage setup.
+
+### Current Status
+
+ Currently, I am able to train the two stage model on MNIST, and it produces good outputs. These outputs can be seen on `main.ipynb`. I will continue with the implementation of the one stage version soon.
 
 ### TODO Items
 - Batch Normalization layer gives a weird CUDA error, fix that. ✔
-- Complete the training loop by implementing the optimizers ✔
-- Fix the bug in the training, so that the model is outputting meanningful results.
+- Complete the training loop by implementing the optimizers. ✔
+- Fix the bug in the training, so that the model is outputting meanningful results. ✔
 - Complete the dataloader for CelebA too.
 - Implement the onestage version.
 
