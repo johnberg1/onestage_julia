@@ -3,7 +3,6 @@ using CUDA
 
 include("layers.jl")
 
-# Fix batchnorm
 mutable struct DCGenerator
     zdim; d; num_channels; layers;
 
@@ -30,7 +29,6 @@ function (g::DCGenerator)(x)
     return g.layers(x)
 end
 
-# Fix batchnorm
 mutable struct DCDiscriminator
     d; num_channels; layers;
     
@@ -46,8 +44,8 @@ mutable struct DCDiscriminator
                         Conv2d(4,4,d*4,d*8;stride=2,padding=1),
                         BatchNorm2d(d*8),
                         Relu(;leaky=0.2),
-                        Conv2d(4,4,d*8,1;stride=1,padding=0),
-                        Sigmoid())
+                        Conv2d(4,4,d*8,1;stride=1,padding=0))
+                        # Sigmoid())
         return new(d,num_channels,layers)
     end
 end
